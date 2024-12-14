@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battery Repair Database</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: #007bff;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        form input, form button, form select {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        form button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #0056b3;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #007bff;
+            color: white;
+        }
+
+        #incomeSection {
+            max-width: 500px;
+            margin: 20px auto;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #incomeSection h2 {
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+
+            form {
+                width: 90%;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Battery Garage Armenia Repair Database</h1>
+    </header>
+
+    <form id="batteryForm">
+        <input type="text" id="batteryName" placeholder="Battery Name" required>
+        <input type="number" id="amperes" placeholder="Amperes (Ah)" required>
+        <input type="text" id="customerPhone" placeholder="Customer Phone" required>
+        <input type="number" id="chargedAmount" placeholder="Charged Amount ($)" required>
+        <input type="date" id="entryDate" required>
+        <input type="number" id="batteryStatus" placeholder="Battery Status (%)" min="0" max="100" required>
+        <button type="submit">Add Entry</button>
+    </form>
+
+    <div id="incomeSection">
+        <h2>Total Monthly Income</h2>
+        <p id="monthlyIncome">$0</p>
+    </div>
+
+    <table id="batteryTable">
+        <thead>
+            <tr>
+                <th>Battery Name</th>
+                <th>Amperes</th>
+                <th>Customer Phone</th>
+                <th>Charged Amount</th>
+                <th>Entry Date</th>
+                <th>Battery Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
